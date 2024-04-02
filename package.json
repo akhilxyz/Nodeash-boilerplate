@@ -1,0 +1,27 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": " npm run create-db &&  nodemon --inspect -e ts -w server.ts -w ./src -x npm run watch-serve",
+    "create-db": "NODE_ENV=dev ts-node -r dotenv/config ./src/db/createDB.ts dotenv_config_path=.env",
+    "watch-serve": "NODE_ENV=dev ts-node -r dotenv/config ./src/server.ts dotenv_config_path=.env"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "joi": "^17.12.2",
+    "nodeash": "^2.3.9",
+    "nodeash-sql": "^2.2.52",
+    "nodemon": "^3.1.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.3"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21"
+  }
+}
